@@ -1,0 +1,14 @@
+todolist.txt
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env/
+.venv/
+env/
+*.log
+*.tmp
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
