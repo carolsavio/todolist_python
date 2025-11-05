@@ -46,4 +46,39 @@ def register(arc, task):
             print(f'Nova tarefa "{task}" agendada com sucesso!')
             a.close()      
 
-#def removeTask(arc, task):
+def removeTask(arc, task):
+    try:
+        a = open(arc, 'rt')
+    except FileNotFoundError:
+        print('Arquivo não encontrado!')
+        return
+    except Exception:
+        print('Ocorreu um erro ao abrir o arquivo!')
+        return
+    else:
+        lines = a.readlines()
+        a.close()
+
+    task_stripped = task.strip()
+
+    removed = False
+    new_lines = []
+    for line in lines:
+        if line.strip() != task_stripped:
+            new_lines.append(line)
+        else:
+            removed = True
+
+    try:
+        a = open(arc, 'wt')
+        for line in new_lines:
+            a.write(line)
+        a.close()
+    except Exception:
+        print('Ocorreu um erro ao salvar o arquivo!')
+        return
+
+    if removed:
+        print(f'Tarefa "{task}" removida com sucesso!')
+    else:
+        print(f'Tarefa "{task}" não encontrada.')

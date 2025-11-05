@@ -17,8 +17,9 @@ while True:
         header('Cadastrar tarefa')
         task = str(input('Nova tarefa: '))
         register(arc, task)
-    #elif ans == 3:
-        #removeTask(arc, task)
+    elif ans == 3:
+        task = str(input('Nome da tarefa a ser removida: '))
+        removeTask(arc, task)
     elif ans == 4:
         header('Saindo...')
         break
