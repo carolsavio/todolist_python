@@ -6,7 +6,7 @@ arc = 'todolist.txt'
 if not archiveExist(arc):
     createArchive(arc)
 
-print(header('To-Do List'))
+header('To-Do List')
 
 while True:
     ans = menu(['Ver tarefas agendadas', 'Cadastrar nova tarefa', 'Concluir tarefa', 'Sair'])
